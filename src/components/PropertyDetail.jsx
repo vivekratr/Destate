@@ -8,6 +8,7 @@ import {
   CCarouselCaption,
 } from "@coreui/react";
 import "@coreui/coreui/dist/css/coreui.min.css";
+import Card from "./Card";
 
 const PropertyDetail = () => {
   const logo = "https://i.imgur.com/C9At9Sx.png";
@@ -56,25 +57,31 @@ const PropertyDetail = () => {
               </div>
             </div>
             <div className="w-[32.938rem] relative text-[1.125rem] font-inter text-[#8a8a8a] text-left inline-block">{`Samtanagar, in Radhika , Sector 17 Vashi, Navi Mumbai, Maharashtra `}</div>
-            <div className="w-[152px] relative rounded bg-white h-[1.875rem] overflow-hidden text-left text-[0.875rem] text-black font-inter">
+            <div className="w-[156px] my-3 flex relative rounded bg-white h-[1.875rem] overflow-hidden text-left text-[0.875rem] text-black font-inter">
               <div className="w-[6.938rem] relative text-[0.875rem] font-inter text-black text-left inline-block">
                 Take AR/VR Tour
               </div>
               <img
-                className="h-auto w-[16px]    overflow-hidden "
+                className="h-auto w-[16px]  object-contain  overflow-hidden "
                 alt=""
                 src="https://i.imgur.com/RoCdTui.png"
               />
             </div>
-            <div className="w-[152px] flex items-center justify-center relative rounded bg-mediumblue h-[2.313rem] overflow-hidden text-left text-[0.875rem] text-white font-inter">
+            <div className="w-[152px] flex items-center justify-center relative rounded bg-[#0038ff] h-[2.313rem] overflow-hidden text-left text-[0.875rem] text-white font-inter">
               <div className=" font-semibold">Buy Now</div>
             </div>
           </div>
 
-          <div className="w-[690px]  min-h-[260px] flex flex-col p-2">
+          <div className="w-[690px]  min-h-[260px] flex  p-2">
             <div className="w-[335px] flex flex-col gap-2">
               <div className="flex">
-                <img src="" alt="" />\
+                <img
+                  width={"53px"}
+                  className="h-auto object-contain"
+                  src="https://i.imgur.com/MUWLtLx.png"
+                  alt=""
+                />
+                \
                 <div>
                   <div className="w-[16.313rem] relative text-[0.875rem] text-black text-left inline-block font-inter">
                     <p className="m-0">
@@ -91,8 +98,96 @@ const PropertyDetail = () => {
                   </div>
                 </div>
               </div>
+              <div className="w-full relative box-border h-[0.063rem] border-t-[1px] border-solid border-whitesmoke" />
+
+              <div className="flex gap-1">
+                <img
+                  className="w-10 h-10 object-contain"
+                  src="https://i.imgur.com/J0Ay6w1.png"
+                  alt=""
+                />
+                <div className="flex flex-col">
+                  <div className="w-[4.813rem] relative text-[0.875rem] font-semibold font-inter text-black text-left inline-block">
+                    1 Bathroom
+                  </div>
+                  <div className="w-[7.25rem] relative text-[0.875rem] font-inter text-darkgray text-left inline-block">
+                    No. of Bathroom
+                  </div>
+                </div>
+              </div>
+              <div className="w-full relative box-border h-[0.063rem] border-t-[1px] border-solid border-whitesmoke" />
+
+              <div className="flex gap-1">
+                <img
+                  className="w-10 h-10 object-contain "
+                  src="https://i.imgur.com/M0Z5c1Z.png"
+                  alt=""
+                />
+                <div className="flex flex-col">
+                  <div className="w-[4.813rem] relative text-[0.875rem] font-semibold font-inter text-black text-left inline-block">
+                    1 Bedroom
+                  </div>
+                  <div className="w-[7.25rem] relative text-[0.875rem] font-inter text-darkgray text-left inline-block">
+                    No. of Bedroom
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-[369px]"></div>
+            <div className="w-[369px] flex flex-col">
+              <div className="w-full relative bg-[#dcdcdc] flex items-center justify-center h-[2.25rem] overflow-hidden text-left text-[0.875rem] text-black font-inter">
+                <div className="font-medium">Contact Information</div>
+              </div>
+
+              <div className="h-[106px] mt-4 flex ">
+                <img
+                  className="w-[93px]"
+                  src="https://i.imgur.com/yvE229a.png"
+                  alt=""
+                />
+                <div className="flex p-2 flex-col gap-4 w-full">
+                  <div className="w-full relative h-[1.063rem] text-left text-[0.875rem] text-black font-inter">
+                    <div className="absolute top-[0rem] left-[0rem] font-semibold">
+                      Ravi Sharma
+                    </div>
+                    <i className="absolute top-[0.125rem] left-[5.5rem] text-[0.75rem]">
+                      (Owner)
+                    </i>
+                  </div>
+                  <div className="w-[12.313rem] relative text-[0.875rem] text-black text-left inline-block font-inter">
+                    <span className="font-semibold">{`Phone Number : `}</span>
+                    <span className="font-medium">7021455632</span>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-full relative flex items-center justify-center rounded bg-[#00b25c] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-white font-inter">
+                      <div className="">Chat with Owner</div>
+                    </div>
+                    <div className="w-full flex items-center justify-center relative rounded bg-[#00b25c] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-white font-inter">
+                      <div className="">Book a meeting</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* description part */}
+        <div className="flex flex-col p-2 gap-4"> 
+        <div className="w-[8.813rem] relative text-[0.875rem] font-semibold font-inter text-black text-left inline-block">Property Description</div>
+        <div className="w-[86.563rem] relative text-[0.875rem] font-medium font-inter text-black text-left inline-block">A small deck in the back adds a touch of outdoor charm, offering a private retreat for relaxation or entertaining. Situated in a sought-after location, this 2-flat building close to amenities, schools, and transportation, it offers the perfect blend of comfort and accessibility. Whether you're an investor or a homeowner, this 2-flat building is a must-see A small deck in the back adds a touch of outdoor charm, offering a private retreat for relaxation or entertaining. Situated in a sought-after location, this 2-flat building close to amenities, schools, and transportation, it offers the perfect blend of comfort and accessibility. Whether you're an investor or a homeowner, this 2-flat building is a must-see</div>
+        <div className="w-[7.75rem] relative text-[0.875rem] font-semibold font-inter text-black text-left inline-block">Ownership Details</div>
+        <div className="w-full p-3 relative bg-[#EDEDED] h-[10.25rem] overflow-hidden" > 
+        {/* ownership detail */}
+        </div>
+
+        {/* other properties */}
+        <div className="w-[13.813rem] relative text-[1rem] font-semibold font-inter text-black text-left inline-block">Similar Properties in Locality</div>
+        <div className="max-w-[990px] gap-4 flex flex-wrap">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
       </div>
