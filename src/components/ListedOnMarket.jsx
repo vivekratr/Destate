@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const OwnedByYou = () => {
+const ListedOnMarket = () => {
   return (
     <div className="flex w-[550px] h-[180px]">
       <img
@@ -14,8 +14,8 @@ const OwnedByYou = () => {
         </div>
         <div className="w-[18rem] relative text-[0.75rem] font-inter text-[#8a8a8a] text-left inline-block">{`Samtanagar, in Radhika , Sector 17 Vashi, Navi Mumbai, Maharashtra `}</div>
         <div className="flex gap-2">
-          <div className="w-full flex items-center justify-center relative rounded bg-[#d5d5d5] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
-            <div className="">List On Marletplace</div>
+          <div className="w-full flex items-center justify-center relative rounded bg-[#FF0000] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
+            <div className="">Withdraw Listing</div>
           </div>
           <div className="w-full flex items-center justify-end px-1 gap-1 relative rounded bg-[#d5d5d5] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
             <div className="">
@@ -31,7 +31,7 @@ const OwnedByYou = () => {
         <div className="w-[8.313rem] relative text-[0.75rem] font-inter text-black text-left inline-block">Owned on 17 Dec 2023</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OwnedByYou;
+export default ListedOnMarket

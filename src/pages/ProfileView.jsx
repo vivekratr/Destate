@@ -1,5 +1,9 @@
 import React from "react";
 import WalletButton from "../components/WalletButton";
+import OwnedByYou from "../components/OwnedByYou";
+import ListedOnMarket from "../components/ListedOnMarket";
+import Sold from "../components/Sold";
+import OwnershipHistory from "../components/OwnershipHistory";
 
 const ProfileView = () => {
   const logo = "https://i.imgur.com/C9At9Sx.png";
@@ -72,13 +76,11 @@ const ProfileView = () => {
           </div>
 
           {/* the 4 bottom sections  */}
-          <div className="w-full flex flex-col relative bg-[#ededed] h-[34.063rem] overflow-hidden text-left text-[0.875rem] text-black font-inter">
+          <div className="w-full flex flex-col relative bg-[#ededed] py-6 overflow-hidden text-left text-[0.875rem] text-black font-inter">
             <div className="flex gap-3 p-5">
               <div
                 className={`w-max p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
-                  activeButton === 1
-                    ? "border-blue-500 border-b-2"
-                    : ""
+                  activeButton === 1 ? "border-blue-500 border-b-2" : ""
                 }`}
                 onClick={() => handleButtonClick(1)}
               >
@@ -86,37 +88,35 @@ const ProfileView = () => {
               </div>
               <button
                 className={`w-max p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
-                    activeButton === 2
-                      ? "border-blue-500 border-b-2"
-                      : ""
-                  }`}
+                  activeButton === 2 ? "border-blue-500 border-b-2" : ""
+                }`}
                 onClick={() => handleButtonClick(2)}
               >
                 Listed On Marketplace
               </button>
               <button
-               className={`w-[6.125rem] p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
-                activeButton === 3
-                  ? "border-blue-500 border-b-2"
-                  : ""
-              }`}
+                className={`w-[6.125rem] p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
+                  activeButton === 3 ? "border-blue-500 border-b-2" : ""
+                }`}
                 onClick={() => handleButtonClick(3)}
               >
                 Sold
               </button>
               <button
                 className={`w-max p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
-                    activeButton === 4
-                      ? "border-blue-500 border-b-2"
-                      : ""
-                  }`}
+                  activeButton === 4 ? "border-blue-500 border-b-2" : ""
+                }`}
                 onClick={() => handleButtonClick(4)}
               >
                 Ownership History Ledger
               </button>
             </div>
-
-            <div></div>
+            <div className="flex flex-col gap-2 p-3">
+              {activeButton == 1 ? <OwnedByYou /> : null}
+              {activeButton == 2 ? <ListedOnMarket /> : null}
+              {activeButton == 3 ? <Sold /> : null}
+              {activeButton == 4 ? <OwnershipHistory /> : null}
+            </div>
           </div>
         </div>
       </div>
