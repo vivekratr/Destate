@@ -3,6 +3,11 @@ import WalletButton from "../components/WalletButton";
 
 const ProfileView = () => {
   const logo = "https://i.imgur.com/C9At9Sx.png";
+  const [activeButton, setActiveButton] = React.useState(1);
+
+  const handleButtonClick = (buttonNumber) => {
+    setActiveButton(buttonNumber);
+  };
 
   return (
     <div className="max-w-[1440px] flex flex-col item-center">
@@ -14,16 +19,105 @@ const ProfileView = () => {
       </div>
 
       {/* profile section */}
-      <div className="flex flex-col gap-3">
+      <div className="flex p-4 flex-col gap-3">
         <div className="w-[3.125rem] relative text-[1rem] font-semibold font-inter text-black text-left inline-block">
           Profile
         </div>
 
         <div className="flex gap-7">
-            <div>
-                <img className="w-[256px] h-auto object-cover" src="https://i.imgur.com/Q49Hsz9.png" alt="" />
+          <div>
+            <img
+              className="w-[256px] h-auto object-cover"
+              src="https://i.imgur.com/Q49Hsz9.png"
+              alt=""
+            />
+          </div>
+
+          <div className="flex gap-6 flex-col">
+            <div className="w-full relative h-[2.25rem] text-left text-[0.875rem] text-black font-inter">
+              <div className="absolute top-[0rem] left-[4.75rem] rounded bg-whitesmoke w-[9.938rem] h-[2.25rem] overflow-hidden">
+                <div className="absolute top-[0.625rem] left-[0.875rem] inline-block w-[6.375rem]">
+                  Ravi Sharma
+                </div>
+              </div>
+              <div className="absolute top-[0.625rem] left-[0rem] font-medium">
+                Name
+              </div>
             </div>
 
+            <div className="w-full relative h-[2.25rem] text-left text-[0.875rem] text-black font-inter">
+              <div className="absolute top-[0rem] left-[4.75rem] rounded bg-whitesmoke w-[9.938rem] h-[2.25rem] overflow-hidden">
+                <div className="absolute top-[0.625rem] left-[0.875rem] inline-block w-[6.375rem]">
+                  7021455461
+                </div>
+              </div>
+              <div className="absolute top-[0.625rem] left-[0rem] font-medium">{`Phone No. `}</div>
+            </div>
+
+            <div className="w-full relative h-[2.25rem] text-left text-[0.875rem] text-black font-inter">
+              <div className="absolute top-[0rem] left-[4.75rem] rounded bg-whitesmoke w-[9.938rem] h-[2.25rem] overflow-hidden">
+                <div className="absolute top-[0.625rem] left-[0.875rem] inline-block w-[6.75rem]">
+                  ravi@gmail.com
+                </div>
+              </div>
+              <div className="absolute top-[0.625rem] left-[0rem] font-medium">{`Email `}</div>
+            </div>
+          </div>
+        </div>
+
+        {/* bottom section  */}
+        <div className="flex flex-col gap-3 mt-10">
+          <div className="w-[11.5rem] relative text-[0.875rem] font-semibold font-inter text-black text-left inline-block">
+            Property Ownership Status
+          </div>
+
+          {/* the 4 bottom sections  */}
+          <div className="w-full flex flex-col relative bg-[#ededed] h-[34.063rem] overflow-hidden text-left text-[0.875rem] text-black font-inter">
+            <div className="flex gap-3 p-5">
+              <div
+                className={`w-max p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
+                  activeButton === 1
+                    ? "border-blue-500 border-b-2"
+                    : ""
+                }`}
+                onClick={() => handleButtonClick(1)}
+              >
+                Owned By You
+              </div>
+              <button
+                className={`w-max p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
+                    activeButton === 2
+                      ? "border-blue-500 border-b-2"
+                      : ""
+                  }`}
+                onClick={() => handleButtonClick(2)}
+              >
+                Listed On Marketplace
+              </button>
+              <button
+               className={`w-[6.125rem] p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
+                activeButton === 3
+                  ? "border-blue-500 border-b-2"
+                  : ""
+              }`}
+                onClick={() => handleButtonClick(3)}
+              >
+                Sold
+              </button>
+              <button
+                className={`w-max p-3 text-center relative text-[0.875rem] font-medium font-inter text-black  inline-block ${
+                    activeButton === 4
+                      ? "border-blue-500 border-b-2"
+                      : ""
+                  }`}
+                onClick={() => handleButtonClick(4)}
+              >
+                Ownership History Ledger
+              </button>
+            </div>
+
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
