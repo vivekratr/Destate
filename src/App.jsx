@@ -10,6 +10,7 @@ import Mainpage from './pages/Mainpage';
 import RegisterPopup from './components/RegisterPopup';
 import Dashboard from './pages/Dashboard';
 import PropertyDetail from './components/PropertyDetail';
+import ProfileView from './pages/ProfileView';
 
 
 function App() {
@@ -49,6 +50,7 @@ createWeb3Modal({
           <Route path="/clone" element={<Clone />} /> 
           <Route path="/clone1" element={<Clone1 />} /> 
           <Route path="/property" element={<PropertyDetail />} /> 
+          <Route path="/profile" element={<ProfileView />} /> 
           {/* <Route path="/profile/:walletAddress" element={<Profile/>} /> */}
           
           
