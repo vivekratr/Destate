@@ -7,12 +7,14 @@ import {
   } from "@coreui/react";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
   const searchIcon = "https://i.imgur.com/RPM49ka.png";
   const [bruno,setBruno] = useState('')
   const [call,setCall] = useState(false)
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
@@ -76,7 +78,16 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-5 w-full flex-row-reverse">
-          <div className="w-[36px] relative flex items-center justify-center   rounded bg-[#EBEBEB] h-[2.25rem] overflow-hidden">
+        <div onClick={()=>{
+            navigate('/trans')
+          }} className="w-[112px] relative rounded bg-[#EBEBEB] h-[2.25rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
+            <div className="absolute top-[0.688rem] left-[0.5rem] inline-block w-[6.375rem]">
+              Transaction History
+            </div>
+          </div>
+          <div onClick={()=>{
+            navigate('/profile')
+          }} className="w-[36px] relative flex items-center justify-center   rounded bg-[#EBEBEB] h-[2.25rem] overflow-hidden">
             <img
               className="w-[24px] object-cover"
               src="https://i.imgur.com/g9hkARJ.png"
@@ -84,13 +95,15 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="w-[112px] relative rounded bg-[#EBEBEB] h-[2.25rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
+          <div onClick={()=>{
+            navigate('/list')
+          }} className="w-[112px] relative rounded bg-[#EBEBEB] h-[2.25rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
             <div className="absolute top-[0.688rem] left-[0.5rem] inline-block w-[6.375rem]">
               List Your Property
             </div>
           </div>
 
-          <div className="w-[107px] relative rounded [background:linear-gradient(-82.52deg,_#1983ff,_#5cffe7_38.4%,_#1cfa8f_62.4%,_#63f3ae)] h-[2.25rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
+          <div  className="w-[107px] relative rounded [background:linear-gradient(-82.52deg,_#1983ff,_#5cffe7_38.4%,_#1cfa8f_62.4%,_#63f3ae)] h-[2.25rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
             <img
               className="absolute top-[0.563rem] left-[0.375rem] w-[1.125rem] h-[1.125rem] overflow-hidden"
               alt=""

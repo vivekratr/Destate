@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Card = (props) => {
   console.log(props);
+  const navigate = useNavigate()
+
   return (
-    <div className="w-[302px] h-[310px] rounded-lg bg-[#ededed] flex flex-col ">
+    <div onClick={()=>{
+      navigate('/property')
+    }} className="w-[302px] h-[310px] rounded-lg bg-[#ededed] flex flex-col ">
       <div className="w-full ">
         <img
           className="w-[307px] h-[180px] object-contain"

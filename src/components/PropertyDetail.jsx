@@ -1,6 +1,8 @@
 import React from "react";
 import WalletButton from "./WalletButton";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
+
 import {
   CCarousel,
   CCarouselItem,
@@ -14,9 +16,10 @@ const PropertyDetail = () => {
   const logo = "https://i.imgur.com/C9At9Sx.png";
   const pic1 = "https://i.imgur.com/Q2yxuqO.png";
   const pic2 = "https://i.imgur.com/Dvs1XvX";
+  const navigate = useNavigate()
 
   return (
-    <div className="max-w-[1440px] flex flex-col item-center">
+    <div  className="max-w-[1440px] flex flex-col item-center">
       <div className="w-full relative flex justify-end py-1 ">
         <div className="absolute top-2 left-2">
           <img className="w-[114px]" src={logo} alt="" />

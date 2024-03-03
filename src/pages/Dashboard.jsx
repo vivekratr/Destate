@@ -7,12 +7,14 @@ import Navbar from "../components/Navbar";
 import { ChatContext } from "../context/ChatContext";
 import RegisterPopup from "../components/RegisterPopup";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Dashboard = () => {
   const {GetPropertyById,currentAccount,address,GetAllTransaction,allProp} = useContext(ChatContext)
   const [showReg,setShowReg] = React.useState(false)
+  const navigate = useNavigate()
 
 
   const logo = "https://i.imgur.com/C9At9Sx.png";
@@ -86,7 +88,9 @@ const Dashboard = () => {
           <div className="max-w-[990px] gap-4 flex flex-wrap">
           {Object.entries(allProp).map(([key, value]) => (
     // Process the key and value here
-    <Card key={value.id} data={value} n={key} />
+    <Card onClick={()=>{
+      navigate('/property')
+    }} key={value.id} data={value} n={key} />
   ))}
            
           </div>

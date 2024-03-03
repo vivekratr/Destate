@@ -17,7 +17,8 @@ const OwnedByYou = () => {
           <div className="w-full flex items-center justify-center relative rounded bg-[#d5d5d5] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
             <div className="">List On Marletplace</div>
           </div>
-          <div className="w-full flex items-center justify-end px-1 gap-1 relative rounded bg-[#d5d5d5] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
+          <a className="w-full" href="https://cdn.discordapp.com/attachments/1192087027596935218/1213664352851464192/report.docx?ex=65f64c02&is=65e3d702&hm=5a61ad3b70762b9c6f3b971baf0e375f8eccdfd13d83bbe59d54002bc0244406&" target="_blank">
+          <div  className="w-full flex items-center justify-end px-1 gap-1 relative rounded bg-[#d5d5d5] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
             <div className="">
               Property Papers
             </div>
@@ -26,7 +27,7 @@ const OwnedByYou = () => {
               alt=""
               src="https://i.imgur.com/DJYbzqA.png"
             />
-          </div>
+          </div></a>
         </div>
         <div className="w-[8.313rem] relative text-[0.75rem] font-inter text-black text-left inline-block">Owned on 17 Dec 2023</div>
       </div>
