@@ -173,8 +173,8 @@ export const ChatProvider = ({ children }) => {
         _desc
       );
       await tx.wait();
-
       console.log("tx", tx);
+      return tx;
     } catch (error) {
       console.log(error);
     }

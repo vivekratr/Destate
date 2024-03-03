@@ -30,9 +30,21 @@ const ListProperty = () => {
     setPropertyDocs(files);
   };
 
-  // const handleCreateProperties = async()=>{
-
-  // }
+  const handleCreateProperties = async()=>{
+    console.log("calling", cids);
+    await handleUpload()
+    await CreateProperty(
+      propertyAddress,
+      expectedAmount,
+      area,
+      cids,
+      city,
+      propertyDocs,
+      bhk,
+      description
+    );
+    return true;
+  }
 
   const handleUpload = async () => {
     if (!propertyImages) {
@@ -57,8 +69,9 @@ const ListProperty = () => {
         }
       );
 
-      setCids(
-        `https://${response.data.value.cid}.ipfs.nftstorage.link/${propertyImages[key].name}`
+      setCids( 
+          response.data.value.cid
+        // `https://${response.data.value.cid}.ipfs.nftstorage.link/${propertyImages[key].name}`
       );
 
       console.log("NFT Storage response:");
@@ -213,19 +226,8 @@ const ListProperty = () => {
           </div>
         </div>
         <div
-          onClick={async () => {
-            console.log("calling", cids);
-            await handleUpload()
-            await CreateProperty(
-              propertyAddress,
-              expectedAmount,
-              area,
-              cids,
-              city,
-              propertyDocs,
-              bhk,
-              description
-            );
+          onClick={ () => {
+            handleCreateProperties()
           }}
           className="w-[118px] mx-auto flex items-center justify-center relative rounded bg-[#3763FF] h-[2.25rem] overflow-hidden text-left text-[0.875rem] text-white font-inter"
         >

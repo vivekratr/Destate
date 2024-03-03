@@ -94,6 +94,9 @@ const Dashboard = () => {
   ))}
            
           </div>
+          <div className="w-[500px]">
+            <img className="object-cover" src="https://cdn.discordapp.com/attachments/1198196635780522055/1213706229944160376/image.png?ex=65f67302&is=65e3fe02&hm=eeea4a98c030f34d39daa13370625d4fd763660f1c2af4cfab9a44c7f9977f65&" alt="" />
+          </div>
         </div>
       </div>
     </div>
