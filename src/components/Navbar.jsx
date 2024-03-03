@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     CDropdown,
     CDropdownToggle,
@@ -6,10 +6,26 @@ import {
     CDropdownMenu,
   } from "@coreui/react";
 import "@coreui/coreui/dist/css/coreui.min.css";
+import axios from 'axios';
 
 
 const Navbar = () => {
   const searchIcon = "https://i.imgur.com/RPM49ka.png";
+  const [bruno,setBruno] = useState('')
+  const [call,setCall] = useState(false)
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/makecall', {
+        number : bruno
+      });
+      console.log('you just clicked submit');
+  
+      console.log('Response from server:', response.data);
+    } catch (error) {
+      console.error('Error sending data:', error);
+    }
+  };
 
   const brokoIcon = "https://i.imgur.com/mt1T3vj.png";
 
@@ -68,7 +84,7 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="w-[102px] relative rounded bg-whitesmoke h-[2.25rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
+          <div className="w-[112px] relative rounded bg-[#EBEBEB] h-[2.25rem] overflow-hidden text-left text-[0.75rem] text-black font-inter">
             <div className="absolute top-[0.688rem] left-[0.5rem] inline-block w-[6.375rem]">
               List Your Property
             </div>
@@ -80,10 +96,19 @@ const Navbar = () => {
               alt=""
               src={brokoIcon}
             />
-            <div className="absolute top-[0.688rem] left-[1.75rem] font-medium">
+            <div onClick={()=>{setCall(true)}} className="absolute top-[0.688rem] left-[1.75rem] font-medium">
               Ask Broko.io
             </div>
           </div>
+            <div className={`absolute p-5 flex flex-col gap-4 bg-blue-300 rounded-xl z-20 w-[400px] ${call ? 'block' : 'hidden'} `}>
+            <label htmlFor="">Enter your Number:</label>
+            <input value={bruno} onChange={(e)=>{
+              
+              setBruno(e.target.value)
+            }} type="text" />
+
+            <button className='' onClick={handleSubmit}>Submit</button>
+            </div>
         </div>
       </div>
   )

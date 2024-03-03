@@ -1,11 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import WalletButton from "../components/WalletButton";
 import OwnedByYou from "../components/OwnedByYou";
 import ListedOnMarket from "../components/ListedOnMarket";
 import Sold from "../components/Sold";
 import OwnershipHistory from "../components/OwnershipHistory";
+import { ChatContext } from "../context/ChatContext";
+
 
 const ProfileView = () => {
+    const {GetPropertyById} = useContext(ChatContext)
   const logo = "https://i.imgur.com/C9At9Sx.png";
   const [activeButton, setActiveButton] = React.useState(1);
 
@@ -23,8 +26,10 @@ const ProfileView = () => {
       </div>
 
       {/* profile section */}
-      <div className="flex p-4 flex-col gap-3">
-        <div className="w-[3.125rem] relative text-[1rem] font-semibold font-inter text-black text-left inline-block">
+      <div  className="flex p-4 flex-col gap-3">
+        <div onClick={async()=>{
+          await  GetPropertyById(1);
+        }} className="w-[3.125rem] relative text-[1rem] font-semibold font-inter text-black text-left inline-block">
           Profile
         </div>
 

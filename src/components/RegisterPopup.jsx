@@ -1,13 +1,17 @@
-import  { useState } from "react";
+import  { useState,useContext } from "react";
 import axios from "axios";
+import { ChatContext } from "../context/ChatContext";
 
-const RegisterPopup = () => {
+
+const RegisterPopup = (props) => {
   const img1 = "https://i.imgur.com/FzROOWo.png";
   const crossImg = "https://i.imgur.com/RiV6kzS.png";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  // const isDisabled = !name || !email || !phoneNumber;
+  const {currentAccount,CreateUser} = useContext(ChatContext)
+
+  const isDisabled = !name || !email || !phoneNumber;
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -22,15 +26,11 @@ const RegisterPopup = () => {
   };
   const handleSubmit = async () => {
     try {
-      console.log('you just clicked submit');
-      const response = await axios.post('http://127.0.0.1:5000/makedoc', {
-        title : ['Bhayandar 2BHK Flat'],
-        content:  [phoneNumber] ,
-        from_id: ['0x28318232'],
-        to_id: ['0x321838283'],
-        date: [new Date().toISOString()],
-        money: ['dedh laakh'],
+      const response = await axios.post('http://127.0.0.1:5000/reg_user', {
+        wallet_address : currentAccount
       });
+      await CreateUser(name, email, phoneNumber);
+      console.log('you just clicked submit');
   
       console.log('Response from server:', response.data);
     } catch (error) {
@@ -47,7 +47,9 @@ const RegisterPopup = () => {
         />
       </div>
       <div className="max-w-full relative gap-[31px] p-5 flex flex-col justify-center items-center">
-        <div className="absolute right-1 top-2">
+        <div onClick={()=>{
+          props.func(false)
+        }} className="absolute cursor-pointer hover:scale-105 transition-all duration-150 right-1 top-2">
           <img className="w-5 object-cover h-auto" src={crossImg} alt="cross" />
         </div>
         <div className="w-[11.563rem] relative text-[1rem] font-medium font-inter text-black text-left inline-block">
@@ -79,7 +81,7 @@ const RegisterPopup = () => {
         </div>
 
         <div
-        // disabled={isDisabled}
+        disabled={isDisabled}
           onClick={handleSubmit}
           className="w-full flex justify-center items-center relative rounded bg-[#0094ff] h-[2rem] overflow-hidden text-left text-[0.75rem] text-white font-inter"
         >

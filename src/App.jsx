@@ -5,6 +5,8 @@ import './App.css'
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react'
 import Clone from  './pages/Clone';
 import Clone1 from './pages/Clone1';
+import {ChatProvider} from './context/ChatContext'
+
 
 import Mainpage from './pages/Mainpage';
 import RegisterPopup from './components/RegisterPopup';
@@ -12,6 +14,9 @@ import Dashboard from './pages/Dashboard';
 import PropertyDetail from './components/PropertyDetail';
 import ProfileView from './pages/ProfileView';
 import OwnershipHistory from './components/OwnershipHistory';
+import ListProperty from './components/ListProperty';
+import { Transaction } from 'ethers';
+import Ledger from './components/Ledger';
 
 
 function App() {
@@ -43,6 +48,8 @@ createWeb3Modal({
 
   return (
     <>
+    <ChatProvider>
+
        <BrowserRouter>
      <Routes>
           <Route path="/main" element={<Mainpage/>} /> 
@@ -53,6 +60,8 @@ createWeb3Modal({
           <Route path="/property" element={<PropertyDetail />} /> 
           <Route path="/profile" element={<ProfileView />} /> 
           <Route path="/owner" element={<OwnershipHistory />} /> 
+          <Route path="/list" element={<ListProperty />} /> 
+          <Route path="/trans" element={<Ledger />} /> 
 
           {/* <Route path="/profile/:walletAddress" element={<Profile/>} /> */}
           
@@ -62,6 +71,7 @@ createWeb3Modal({
         </Routes>
   
      </BrowserRouter>
+     </ChatProvider>
     </>
   )
 }
