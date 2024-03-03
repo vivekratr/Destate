@@ -16,7 +16,7 @@ const ListProperty = () => {
   const [cids, setCids] = useState("");
   const [spin, setSpin] = useState(false);
   const [links, setLinks] = useState();
-  const { currentAccount, CreateProperty } = useContext(ChatContext);
+  const {  CreateProperty } = useContext(ChatContext);
 
   // Function to handle file input change for property images
   const handlePropertyImagesChange = (event) => {
@@ -73,8 +73,9 @@ const ListProperty = () => {
           response.data.value.cid
         // `https://${response.data.value.cid}.ipfs.nftstorage.link/${propertyImages[key].name}`
       );
-
+      
       console.log("NFT Storage response:");
+      return response;
     } catch (error) {
       console.error("Error uploading to NFT Storage:", error);
     }

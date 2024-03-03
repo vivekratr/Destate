@@ -142,7 +142,7 @@ export const ChatProvider = ({ children }) => {
       const tx = await contracts.getAllProperties();
 
       console.log("tx", tx[0]);
-      setAllProp(tx)
+      setAllProp(tx);
       return tx;
     } catch (error) {
       console.log(error);
@@ -161,10 +161,12 @@ export const ChatProvider = ({ children }) => {
     _desc
   ) => {
     try {
-      
       const contracts = await getEthereumContract();
       console.log("inside store,", contracts);
-      const tx = await contracts.createProperty(_heading,_address,_cost,
+      const tx = await contracts.createProperty(
+        _heading,
+        _address,
+        _cost,
         _area,
         _images,
         _city,
@@ -179,8 +181,6 @@ export const ChatProvider = ({ children }) => {
       console.log(error);
     }
   };
-
-
 
   useEffect(() => {
     const fetchPropertyData = async () => {

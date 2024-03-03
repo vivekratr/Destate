@@ -9,7 +9,7 @@ const RegisterPopup = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const {currentAccount,CreateUser} = useContext(ChatContext)
+  const {address,CreateUser} = useContext(ChatContext)
 
   const isDisabled = !name || !email || !phoneNumber;
 
@@ -27,7 +27,7 @@ const RegisterPopup = (props) => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post('http://127.0.0.1:5000/reg_user', {
-        wallet_address : currentAccount
+        wallet_address : address
       });
       await CreateUser(name, email, phoneNumber);
       console.log('you just clicked submit');

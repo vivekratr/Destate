@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Dashboard = () => {
-  const {GetPropertyById,currentAccount,address,GetAllTransaction,allProp} = useContext(ChatContext)
+  const {GetPropertyById,address,GetAllTransaction,allProp} = useContext(ChatContext)
   const [showReg,setShowReg] = React.useState(false)
   const navigate = useNavigate()
 
@@ -41,7 +41,6 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchPropertyData = async () => {
       try {
-        console.log(currentAccount)
         
         await GetAllTransaction();
        await handleSubmit()
