@@ -165,9 +165,10 @@ const PropertyDetail = () => {
                     <div className="w-full relative flex items-center justify-center rounded bg-[#00b25c] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-white font-inter">
                       <div className="">Chat with Owner</div>
                     </div>
-                    <div className="w-full flex items-center justify-center relative rounded bg-[#00b25c] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-white font-inter">
+                    <a className="w-full" href="https://calendly.com/shreyashsingh865/30min" target=" _blank ">
+                    <div  className="w-full flex items-center justify-center relative rounded bg-[#00b25c] h-[1.875rem] overflow-hidden text-left text-[0.75rem] text-white font-inter">
                       <div className="">Book a meeting</div>
-                    </div>
+                    </div></a>
                   </div>
                 </div>
               </div>
